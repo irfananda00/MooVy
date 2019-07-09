@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:id="@+id/root">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity" android:id="@+id/scrollView3">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp" android:id="@+id/textView" android:text="Now Playing"
+                    android:textSize="18sp" android:fontFamily="sans-serif-medium"/>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/rvNowPlaying" tools:listitem="@layout/item_movie_big" tools:itemCount="1"
+            />
+            <TextView
+                    android:text="Coming Soon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:id="@+id/textView2" android:textSize="18sp"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"/>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/rvComingSoon"
+                    tools:listitem="@layout/item_movie_small" tools:itemCount="1"/>
+            <View
+                    android:layout_marginTop="64dp"
+                    android:layout_marginBottom="32dp"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:theme="?attr/actionBarTheme"
+            android:minHeight="?attr/actionBarSize" android:id="@+id/toolbar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_search_24dp"
+            android:id="@+id/btnSearch"
+            android:background="#00FFFFFF" android:scaleType="center" android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar" app:layout_constraintTop_toTopOf="@+id/toolbar"/>
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp" android:id="@+id/rvSearchMovie"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/scrollView3" android:background="#303030"
+            tools:visibility="visible" tools:listitem="@layout/item_movie_small"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/edtSearch"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnSearch"
+            app:layout_constraintTop_toTopOf="@+id/toolbar" app:layout_constraintBottom_toTopOf="@+id/rvSearchMovie"
+            android:hint="Search movie ..." android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/btnCloseSearch" android:layout_marginStart="8dp"/>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_keyboard_arrow_down_24dp"
+            android:id="@+id/btnCloseSearch"
+            android:background="#00FFFFFF"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:layout_constraintBottom_toBottomOf="@+id/toolbar" app:layout_constraintStart_toStartOf="@+id/toolbar"
+            android:layout_marginStart="8dp" tools:visibility="visible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

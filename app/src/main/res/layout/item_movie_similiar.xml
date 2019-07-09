@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+android:padding="8dp">
+
+    <androidx.cardview.widget.CardView app:cardUseCompatPadding="true"
+            android:layout_width="wrap_content"
+                                       android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="wrap_content"
+                                                           android:layout_height="wrap_content">
+
+            <ImageView
+                    android:layout_width="128dp"
+                    android:layout_height="192dp" tools:srcCompat="@tools:sample/avatars"
+                    android:id="@+id/cardPoster" app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" android:scaleType="centerCrop"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/txtTitle" tools:text="Toy Story 4"/>
+
+</LinearLayout>
